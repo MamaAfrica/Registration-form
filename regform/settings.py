@@ -11,10 +11,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -27,8 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
-#SMTP Configuration
+# SMTP Configuration
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -80,7 +79,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'regform.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
@@ -90,7 +88,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -110,7 +107,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -121,8 +117,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -140,10 +134,14 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 from django.contrib.messages import constants as messages
+
 MESSAGE_TAGS = {
-        messages.DEBUG: 'alert-secondary',
-        messages.INFO: 'alert-info',
-        messages.SUCCESS: 'alert-success',
-        messages.WARNING: 'alert-warning',
-        messages.ERROR: 'alert-danger',
+    messages.DEBUG: 'alert-secondary',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
 }
+
+
+django_heroku.settings(locals())
