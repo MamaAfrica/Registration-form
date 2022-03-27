@@ -49,14 +49,14 @@
                                 <div class="input-group">
                                     <label class="label">first name</label>
 {#                                    {{ form.first_name }}#}
-                                    <input class="input--style-4" type="text" name="first_name">
+                                    <input class="input--style-4" type="text" name="first_name" required>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">last name</label>
 {#                                    {{ form.last_name }}#}
-                                    <input class="input--style-4" type="text" name="last_name">
+                                    <input class="input--style-4" type="text" name="last_name" required>
                                 </div>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                                     <div class="input-group-icon">
 {#                                        {{ form.birthday }}#}
                                         {% if error_message %}<p style="align-content: center; color: red"><strong>{{ error_message }}</strong></p>{% endif %}
-                                        <input class="input--style-4 js-datepicker" type="text" name="birthday">
+                                        <input class="input--style-4 js-datepicker" type="text" name="birthday" required>
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
@@ -95,14 +95,14 @@
                                 <div class="input-group">
                                     <label class="label">Email</label>
 {#                                    {{ form.email }}#}
-                                    <input class="input--style-4" type="email" name="email">
+                                    <input class="input--style-4" type="email" name="email" required>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Phone Number</label>
 {#                                    {{ form.phone }}#}
-                                    <input class="input--style-4" type="tel" name="phone">
+                                    <input class="input--style-4" type="tel" name="phone" required>
                                 </div>
                             </div>
                         </div>
@@ -110,8 +110,8 @@
                             <label class="label">Event</label>
                             <div class="rs-select2 js-select-simple select--no-search">
 {#                                {{ form.event }}#}
-                                <select name="event">
-                                    <option disabled="disabled" selected="selected">Choose option</option>
+                                <select name="event" required>
+                                    <option value="">Choose option</option>
                                     <option>Perform</option>
                                     <option>Dynatrace go</option>
                                     <option>Amplify</option>
